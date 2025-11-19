@@ -1,0 +1,39 @@
+
+Palenight
+Background: #292D3E
+Foreground: #A6ACCD
+Text: #676E95
+Selection Background: #717CB470
+Selection Foreground: #FFFFFF
+Buttons: #303348
+Second Background: #34324a
+Disabled: #515772
+Contrast: #202331
+Active: #414863
+Border: #2b2a3e
+Highlight: #444267
+Tree: #676E95
+Notifications: #202331
+Accent Color: #ab47bc
+Excluded Files Color: #2f2e43
+Green Color: #c3e88d
+Yellow Color: #ffcb6b
+Blue Color: #82aaff
+Red Color: #f07178
+Purple Color: #c792ea
+Orange Color: #f78c6c
+Cyan Color: #89ddff
+Gray Color: #676E95
+White/Black Color: #eeffff
+Error Color: #ff5370
+Comments Color: #676E95
+Variables Color: #eeffff
+Links Color: #80cbc4
+Functions Color: #82aaff
+Keywords Color: #c792ea
+Tags Color: #f07178
+Strings Color: #c3e88d
+Operators Color: #89ddff
+Attributes Color: #ffcb6b
+Numbers Color: #f78c6c
+Parameters Color: #f78c6c
