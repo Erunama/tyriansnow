@@ -4,12 +4,12 @@ format = """
 [](color_purple)\
 $os\
 $username\
-[](bg:color_blue fg:color_purple)\
+[](bg:color_blue fg:color_purple)\
 $directory\
-[](fg:color_blue bg:color_aqua)\
+[](fg:color_blue bg:color_aqua)\
 $git_branch\
 $git_status\
-[](fg:color_aqua bg:color_green)\
+[](fg:color_aqua bg:color_green)\
 $c\
 $cpp\
 $rust\
@@ -20,11 +20,12 @@ $java\
 $kotlin\
 $haskell\
 $python\
-[](fg:color_green bg:color_yellow)\
+[](fg:color_green bg:color_yellow)\
 $docker_context\
 $conda\
 $pixi\
-[](fg:color_yellow bg:color_orange)\
+$memory_usage\
+[](fg:color_yellow bg:color_orange)\
 $time\
 [ ](fg:color_orange)\
 $line_break$character"""
@@ -40,7 +41,6 @@ color_aqua = '#80cbc4'
 color_green = '#c3e88d'
 color_yellow = '#ffcb6b'
 color_orange = '#f78c6c'
-
 color_red = '#f07178'
 color_text =  '#eeffff'
 color_background = '#282C3D'
@@ -51,37 +51,20 @@ style = "bg:color_purple fg:color_text"
 
 [os.symbols]
 Windows = "󰍲"
-Ubuntu = "󰕈"
-SUSE = ""
-Raspbian = "󰐿"
-Mint = "󰣭"
-Macos = "󰀵"
-Manjaro = ""
 Linux = "󰌽"
-Gentoo = "󰣨"
-Fedora = "󰣛"
-Alpine = ""
-Amazon = ""
-Android = ""
-AOSC = ""
 Arch = "󰣇"
-Artix = "󰣇"
-EndeavourOS = ""
-CentOS = ""
-Debian = "󰣚"
-Redhat = "󱄛"
-RedHatEnterprise = "󱄛"
-Pop = ""
 
 [username]
 show_always = true
 style_user = "bg:color_purple fg:color_text"
 style_root = "bg:color_purple fg:color_text"
+aliases = { daniel = 'Daniël'}
 format = '[ $user ]($style)'
 
 [directory]
 style = "fg:color_text bg:color_blue"
 format = "[ $path ]($style)"
+home_symbol = " "
 truncation_length = 3
 truncation_symbol = "…/"
 
@@ -91,16 +74,19 @@ truncation_symbol = "…/"
 "Music" = "󰝚 "
 "Pictures" = " "
 "Developer" = "󰲋 "
+"Projects" = "󰏗 "
+#  TODO: Add more substitutions
 
+# Git metrics
 [git_branch]
 symbol = ""
 style = "bg:color_green"
-format = '[[ $symbol $branch ](fg:color_text bg:color_aqua)]($style)'
+format = '[[ $symbol $branch ($remote_name) ](fg:color_text bg:color_aqua)]($style)'
 
 [git_status]
 style = "bg:color_green"
 format = '[[($all_status$ahead_behind )](fg:color_text bg:color_aqua)]($style)'
-
+# TODO: Expand
 [nodejs]
 symbol = ""
 style = "bg:color_blue"
@@ -153,16 +139,16 @@ format = '[[ $symbol( $version) ](fg:color_text bg:color_blue)]($style)'
 
 [docker_context]
 symbol = ""
-style = "bg:color_bg3"
-format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+style = "bg:color_yellow"
+format = '[[ $symbol( $context) ](fg:#color_text bg:color_yellow)]($style)'
 
 [conda]
-style = "bg:color_bg3"
-format = '[[ $symbol( $environment) ](fg:#83a598 bg:color_bg3)]($style)'
+style = "bg:color_yellow"
+format = '[[ $symbol( $environment) ](fg:color_text bg:color_yellow)]($style)'
 
 [pixi]
-style = "bg:color_bg3"
-format = '[[ $symbol( $version)( $environment) ](fg:color_text bg:color_bg3)]($style)'
+style = "bg:color_yellow"
+format = '[[ $symbol( $version)( $environment) ](fg:color_text bg:color_yellow)]($style)'
 
 [time]
 disabled = false
